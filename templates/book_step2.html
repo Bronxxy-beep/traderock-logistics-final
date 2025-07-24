@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Step 2: Select Mineral and Quantity</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <div class="mb-3">{{ form.mineral.label }} {{ form.mineral(class="form-control") }}</div>
+    <div class="mb-3">{{ form.quantity.label }} {{ form.quantity(class="form-control") }}</div>
+    <button class="btn btn-primary">{{ form.submit.label }}</button>
+</form>
+{% endblock %}

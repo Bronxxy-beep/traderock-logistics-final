@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Step 3: Enter Destination</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <div class="mb-3">{{ form.destination.label }} {{ form.destination(class="form-control") }}</div>
+    <button class="btn btn-success">{{ form.submit.label }}</button>
+</form>
+{% endblock %}

@@ -1,0 +1,34 @@
+/* DarkBackground.css */
+
+.dark-wrapper {
+  position: relative;
+  background-color: #0f172a;
+  min-height: 100vh;
+  overflow: hidden;
+  color: #f1f5f9;
+}
+
+.dark-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+  background: linear-gradient(-45deg, #1e293b, #334155, #475569, #0f172a);
+  background-size: 400% 400%;
+  animation: darkGradient 20s ease infinite;
+  opacity: 0.4;
+}
+
+@keyframes darkGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

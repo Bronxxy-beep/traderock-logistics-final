@@ -1,0 +1,26 @@
+/* src/Pages/ShipmentHistory.css */
+
+.history-container {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(6px);
+  padding: 2rem;
+  border-radius: 16px;
+  color: #fff;
+  animation: fadeIn 0.6s ease;
+  max-width: 95%;
+  margin: auto;
+}
+
+.table {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.table thead th {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Booking Confirmed</h2>
+<p><strong>Mineral:</strong> {{ shipment.mineral.name }}</p>
+<p><strong>Quantity:</strong> {{ shipment.quantity_kg }} kg</p>
+<p><strong>Destination:</strong> {{ shipment.destination }}</p>
+<p><strong>Total Price:</strong> ${{ shipment.price }}</p>
+<p><strong>Status:</strong> {{ shipment.status }}</p>
+{% endblock %}
