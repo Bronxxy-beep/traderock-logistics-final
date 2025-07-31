@@ -12,6 +12,9 @@ import LoginRegister from './Pages/LoginRegister';
 import RegisterForm from './Pages/RegisterForm';
 import ShipmentHistory from './Pages/ShipmentHistory';
 import Login from './Pages/Login';
+import Signup from './Pages/Signup';
+import Profile from './Pages/Profile';
+
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 
@@ -29,6 +32,10 @@ function App() {
         <Route path='/Signup' element={<RegisterForm/>}/>
         <Route path='/shipment-history' element={<ShipmentHistory/>}/>
         <Route path='/Login' element={<Login/>}/>
+        <Route path='/Signup' element={<Signup/>}/>
+        <Route path='/Profile' element={<Profile/>}/>
+      
+        
       </Routes>
 
     </Router>

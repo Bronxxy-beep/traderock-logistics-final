@@ -53,8 +53,12 @@ function Navbar() {
             <li className="nav-item">
               <NavLink to="/BookShipment" className="nav-link">Book Shipment</NavLink>
             </li>
+            
             <li className="nav-item">
-              <NavLink to="client/src/Pages/LoginRegister.js" className="nav-link">Login</NavLink>
+              <NavLink to="login" className="nav-link">Login</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink to="Signup" className="nav-link">Signup</NavLink>
             </li>
           </ul>
         </div>

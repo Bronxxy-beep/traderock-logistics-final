@@ -18,11 +18,11 @@ const BookShipment = () => {
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/minerals')
+    fetch('http://127.0.0.1:5000/api/minerals')
       .then(res => res.json())
       .then(setMinerals);
 
-    fetch('http://localhost:3000/api/destinations')
+    fetch('http://127.0.0.1:5000/api/destinations')
       .then(res => res.json())
       .then(setDestinations);
   }, []);
@@ -45,7 +45,7 @@ const BookShipment = () => {
   };
 
   const handleSubmit = async () => {
-    const res = await fetch('http://localhost:3000/api/bookings', {
+    const res = await fetch('http://127.0.0.1:5000/api/bookings', {
       method: 'POST',
       credentials: 'include',
       headers: { 'Content-Type': 'application/json' },
