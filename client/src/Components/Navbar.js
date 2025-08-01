@@ -58,7 +58,7 @@ function Navbar() {
               <NavLink to="login" className="nav-link">Login</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to="Signup" className="nav-link">Signup</NavLink>
+              <NavLink to="RegisterForm" className="nav-link">Signup</NavLink>
             </li>
           </ul>
         </div>

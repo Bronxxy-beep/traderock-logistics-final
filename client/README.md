@@ -1,70 +1,138 @@
-# Getting Started with Create React App
+# Traderock Logistics Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern web application for managing and booking mineral shipments from Nairobi or Mombasa to various destinations. Users can sign up, book shipments by weight or tonne, track order history, and enjoy a rich interactive experience.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🌐 Project Overview
 
-### `npm start`
+**Traderock Logistics** is a Flask + React-based logistics web application focused on:
+- Booking mineral shipments
+- Viewing pricing from depots
+- Tracking shipment history
+- Secure login/signup flow
+- A stylish, animated user interface
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📁 Folder Structure
 
-### `npm test`
+traderock-logistics-final/
+├── backend/ # Flask backend (Python)
+│ └── app.py # Main Flask app
+├── frontend/ # React frontend (JavaScript)
+│ └── src/
+│ ├── Pages/
+│ │ ├── BookShipment.js
+│ │ ├── Login.js
+│ │ ├── Signup.js
+│ │ ├── Profile.js
+│ │ ├── History.js
+│ ├── components/
+│ │ └── Navbar.js
+│ ├── styles/
+│ │ ├── login.css
+│ └── App.js
+├── README.md
+└── requirements.txt
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🔐 Authentication Features
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 1. **Signup**
+- Route: `/api/signup`
+- Frontend: `Signup.js`
+- Input: name, email, password, confirm password
+- Validation: password match, valid email, required fields
+- Stores user in backend and saves info in `localStorage`
 
-### `npm run eject`
+### 2. **Login**
+- Route: `/api/login`
+- Frontend: `Login.js` or `Profile.js`
+- Input: email and password
+- On success, user is stored in localStorage
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 3. **Logout**
+- Button in `Profile.js`
+- Clears localStorage and redirects to login
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 📦 Shipment Booking
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### File: `BookShipment.js`
 
-## Learn More
+- Allows users to:
+  - Choose mineral
+  - Select depot (Nairobi or Mombasa)
+  - Enter shipment weight (tonnes or kg)
+  - View auto-calculated prices
+  - Submit order and view confirmation
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Backend (Flask):
+- Routes for:
+  - `/api/minerals` (GET)
+  - `/api/submit_booking` (POST)
+  - `/api/destinations` (GET)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## 📜 Booking History
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### File: `History.js`
 
-### Analyzing the Bundle Size
+- Shows all past shipments by the logged-in user
+- Pulled from `/api/history`
+- Displays mineral, depot, destination, price, and date
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## 🎨 UI & UX Enhancements
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- **Fixed Navbar** (`Navbar.js`)  
+  - Fixed to top using Tailwind classes (`fixed top-0 w-full z-50`)
+  - Responsive links for home, booking, history, login
 
-### Advanced Configuration
+- **Animated Login Page** (`login.css`)
+  - Background gradient animation
+  - Input zoom-on-focus
+  - Animated entry for login container
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- **Form Animations**  
+  - All form fields animate on focus
+  - Buttons scale slightly on hover
 
-### Deployment
+- **Success Pages**  
+  - Toasts and success animations on booking and login
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## ⚙️ Technologies Used
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Frontend:
+- React.js
+- Tailwind CSS
+- React Router DOM
+- React Toastify
+
+### Backend:
+- Python
+- Flask
+- Flask-CORS
+- JSON APIs
+
+---
+
+## ✅ Setup Instructions
+
+### Backend:
+```bash
+cd backend
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+python app.py
+
